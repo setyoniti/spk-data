@@ -28,7 +28,10 @@ async function request(url, options = {}) {
   }
 }
 
-const GAS_URL = (import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL || '').trim();
+const GAS_URL = (
+  import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL ||
+  'https://script.google.com/macros/s/AKfycbybbkHRIMz_K_jNIiMJAoR6lPdmPs5FzgNIrL-3pB7OQONkNV4uf1uauNh_Bd3TNdHJ/exec'
+).trim();
 
 function gasRequest(payload) {
   if (!GAS_URL) return null;
